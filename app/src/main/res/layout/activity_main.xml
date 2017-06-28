@@ -8,6 +8,16 @@
     tools:context="com.othershe.test.MainActivity">
 
     <com.othershe.cornerlabelview.CornerLabelView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        clv:bg_color="#FFAD2C"
+        clv:position="left_top"
+        clv:side_length="30dp"
+        clv:text="Java"
+        clv:text_color="#000000"
+        clv:text_size="16sp" />
+
+    <com.othershe.cornerlabelview.CornerLabelView
         android:id="@+id/one"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -16,6 +26,7 @@
         clv:position="right_top"
         clv:side_length="100dp"
         clv:text="Android"
+        clv:margin_lean_side="0dp"
         clv:text_color="#000000"
         clv:text_size="16sp" />
 
@@ -26,7 +37,7 @@
         android:layout_alignParentRight="true"
         clv:bg_color="#F95A29"
         clv:position="right_bottom"
-        clv:side_length="100dp"
+        clv:side_length="80dp"
         clv:text="Python"
         clv:text_size="16sp" />
 
@@ -37,17 +48,8 @@
         android:layout_alignParentLeft="true"
         clv:bg_color="#F95A29"
         clv:position="left_bottom"
-        clv:side_length="50dp"
+        clv:side_length="100dp"
         clv:text="Kotlin"
         clv:text_size="16sp" />
 
-    <com.othershe.cornerlabelview.CornerLabelView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        clv:bg_color="#FFAD2C"
-        clv:position="left_top"
-        clv:side_length="50dp"
-        clv:text="Java"
-        clv:text_color="#000000"
-        clv:text_size="16sp" />
 </RelativeLayout>

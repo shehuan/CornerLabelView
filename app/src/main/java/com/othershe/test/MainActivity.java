@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final CornerLabelView cornerLabelView = (CornerLabelView) findViewById(R.id.one);
+//        final CornerLabelView cornerLabelView = (CornerLabelView) findViewById(R.id.one);
 //        new Handler().postDelayed(new Runnable() {
 //            @Override
 //            public void run() {

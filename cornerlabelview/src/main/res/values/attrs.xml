@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="CornerLabelView">
         <attr name="side_length" format="dimension" />
+        <attr name="margin_lean_side" format="dimension" />
         <attr name="bg_color" format="color" />
         <attr name="text_color" format="color" />
         <attr name="text_size" format="dimension" />
