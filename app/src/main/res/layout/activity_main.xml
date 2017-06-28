@@ -24,9 +24,8 @@
         android:layout_alignParentRight="true"
         clv:bg_color="#FFAD2C"
         clv:position="right_top"
-        clv:side_length="100dp"
+        clv:side_length="50dp"
         clv:text="Android"
-        clv:margin_lean_side="0dp"
         clv:text_color="#000000"
         clv:text_size="16sp" />
 
