@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:clv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.othershe.test.MainActivity">
+
+    <com.othershe.cornerlabelview.CornerLabelView
+        android:id="@+id/one"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        clv:bg_color="#FFAD2C"
+        clv:position="right_top"
+        clv:side_length="100dp"
+        clv:text="Android"
+        clv:text_color="#000000"
+        clv:text_size="16sp" />
+
+    <com.othershe.cornerlabelview.CornerLabelView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        clv:bg_color="#F95A29"
+        clv:position="right_bottom"
+        clv:side_length="100dp"
+        clv:text="Python"
+        clv:text_size="16sp" />
+
+    <com.othershe.cornerlabelview.CornerLabelView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        clv:bg_color="#F95A29"
+        clv:position="left_bottom"
+        clv:side_length="50dp"
+        clv:text="Kotlin"
+        clv:text_size="16sp" />
+
+    <com.othershe.cornerlabelview.CornerLabelView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        clv:bg_color="#FFAD2C"
+        clv:position="left_top"
+        clv:side_length="50dp"
+        clv:text="Java"
+        clv:text_color="#000000"
+        clv:text_size="16sp" />
+</RelativeLayout>
