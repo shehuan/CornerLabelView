@@ -17,14 +17,20 @@ public class CornerLabelView extends View {
     private TextPaint mTextPaint;//文字画笔
     private Path mPath;//角标路径
 
-    private int position;//角标位置
+    private int position;//角标位置，0：右上角、1：右下角、2：左下角、3：左上角
     //角标的显示边长
-    private int sideLength = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
-    private int textSize;
+    private int sideLength = (int) TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
+    //字体大小
+    private int textSize = (int) TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_SP, 14, getResources().getDisplayMetrics());
+    //字体颜色
     private int textColor = Color.WHITE;
     private String text;
+    //角标背景
     private int bgColor = Color.RED;
-    private int marginLeanSide = -1;//微调文本到斜边的距离
+    //文字到斜边的距离
+    private int marginLeanSide = -1;
 
     public CornerLabelView(Context context) {
         this(context, null);
@@ -45,8 +51,7 @@ public class CornerLabelView extends View {
             } else if (attr == R.styleable.CornerLabelView_side_length) {
                 sideLength = ta.getDimensionPixelSize(attr, sideLength);
             } else if (attr == R.styleable.CornerLabelView_text_size) {
-                textSize = ta.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(
-                        TypedValue.COMPLEX_UNIT_SP, 14, getResources().getDisplayMetrics()));
+                textSize = ta.getDimensionPixelSize(attr, textSize);
             } else if (attr == R.styleable.CornerLabelView_text_color) {
                 textColor = ta.getColor(attr, textColor);
             } else if (attr == R.styleable.CornerLabelView_text) {
@@ -102,7 +107,7 @@ public class CornerLabelView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        //将画布原点移动到View中心
+        //将原点移动到画布中心
         canvas.translate(mHalfWidth, mHalfWidth);
         //根据角标位置旋转画布
         canvas.rotate(position * 90);
@@ -111,7 +116,7 @@ public class CornerLabelView extends View {
             sideLength = mHalfWidth * 2;
         }
 
-        //绘制角标
+        //绘制角标背景
         mPath.moveTo(-mHalfWidth, -mHalfWidth);
         mPath.lineTo(sideLength - mHalfWidth, -mHalfWidth);
         mPath.lineTo(mHalfWidth, mHalfWidth - sideLength);
@@ -123,13 +128,18 @@ public class CornerLabelView extends View {
         canvas.rotate(45);
         //角标实际高度
         int h1 = (int) (Math.sqrt(2) / 2.0 * sideLength);
-        //文本高度
         int h2 = (int) -(mTextPaint.ascent() + mTextPaint.descent());
-        //
+        //文字绘制坐标
         int x = (int) -mTextPaint.measureText(text) / 2;
         int y;
         if (marginLeanSide >= 0) { //使用clv:margin_lean_side属性时
-            if (position == 0 || position == 3) {
+            if (position == 1 || position == 2) {
+                if (h1 - (marginLeanSide - mTextPaint.ascent()) < (h1 - h2) / 2) {
+                    y = -(h1 - h2) / 2;
+                } else {
+                    y = (int) -(h1 - (marginLeanSide - mTextPaint.ascent()));
+                }
+            } else {
                 if (marginLeanSide < mTextPaint.descent()) {
                     marginLeanSide = (int) mTextPaint.descent();
                 }
@@ -138,12 +148,6 @@ public class CornerLabelView extends View {
                     marginLeanSide = (h1 - h2) / 2;
                 }
                 y = -marginLeanSide;
-            } else {
-                if (h1 - (marginLeanSide - mTextPaint.ascent()) < (h1 - h2) / 2) {
-                    y = -(h1 - h2) / 2;
-                } else {
-                    y = (int) -(h1 - (marginLeanSide - mTextPaint.ascent()));
-                }
             }
         } else { //默认情况下
             if (sideLength > mHalfWidth) {
