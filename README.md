@@ -4,6 +4,8 @@
 
 ![](https://github.com/Othershe/CornerLabelView/blob/master/screenshort/scan.PNG)
 
+### 原理<http://www.jianshu.com/p/d5027463208e>
+
 ### 基本用法：
 **Step 1. 添加JitPack仓库**
 在当前项目等根目录下的 `build.gradle` 文件中添加如下内容:
@@ -49,7 +51,7 @@ namespace：xmlns:clv="http://schemas.android.com/apk/res-auto"
 
 |属性名|格式|描述|默认值|
 |---|---|---|---|
-|side_length|dimension|角标的边长|40dp|
+|side_length|dimension|角标水平显示宽度（当该值和CornerLabelView宽度相等时，角标显示为三角形）|40dp|
 |bg_color|color|角标背景色|RED|
 |text_color|color|文字颜色|WHITE|
 |text_size|dimension|文字尺寸|14sp|
