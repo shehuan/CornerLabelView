@@ -4,7 +4,7 @@
 
 ![](https://github.com/Othershe/CornerLabelView/blob/master/screenshort/scan.PNG)
 
-### 原理<http://www.jianshu.com/p/d5027463208e>
+### 原理：<http://www.jianshu.com/p/d5027463208e>
 
 ### 基本用法：
 **Step 1. 添加JitPack仓库**
