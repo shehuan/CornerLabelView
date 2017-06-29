@@ -2,7 +2,7 @@
 
 ### 效果图：
 
-![](https://github.com/Othershe/CornerLabelView/blob/master/screenshot/scan.png)
+![](https://github.com/Othershe/CornerLabelView/blob/master/screenshort/scan.PNG)
 
 ### 基本用法：
 **Step 1. 添加JitPack仓库**
