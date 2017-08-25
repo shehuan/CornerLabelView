@@ -57,4 +57,4 @@ namespace：xmlns:clv="http://schemas.android.com/apk/res-auto"
 |text_size|dimension|文字尺寸|14sp|
 |text|string|文字|
 |position|enum|角标位置：right_top、right_bottom、left_bottom、left_top|right_top|
-|margin_lean_side|dimension|文字到角标斜边的距离（因为有默认距离，则此属性可选）|-1|
+|margin_lean_side|dimension|文字到角最长标斜边的距离（因为有默认距离，则此属性可选）|-1|
